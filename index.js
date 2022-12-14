@@ -1,11 +1,11 @@
 // task one
-
-
-const stringLength = string => {
-    let myString = string.length;
-   return(myString);
-}
-
+const stringLength = (string) => {
+    const lengthOfString= string.length;
+    if (lengthOfString > 0 && lengthOfString < 10) {
+      return lengthOfString;
+    }
+    throw new Error('String length should not exceed 10 characters');
+  };
 
 // task two
 
@@ -16,50 +16,27 @@ const reverseString = string => {
 
 
 // task three
-
 class Calculator {
-    constructor(num1, num2){
-        this.num1 = num1;
-        this.num2 = num2
+    static add(a, b) {
+     return a + b
+    }
+    static subtract(a, b) {
+      return a - b
     }
 
-    add() {
-      var result = this.num1 + this.num2;
-      console.log(result)
-      return result;
-    }
-    subtract() {
-       var result = this.num1 - this.num2;
-       return result;
+    static divide(a, b){
+       return a / b;
     }
 
-    divide(){
-        var result = this.num1 / this.num2;
-        return result;
-    }
-
-    multiply() {
-        var result = this.num1 * this.num2;
-        return result;
+    static multiply(a, b) {
+        return a * b
     }
 }
 
-const object = new Calculator(20, 200);
-
-console.log(object.add())
-
-
-
 // task four
-
 const capitalize = string => {
     var capitalizedString = string.charAt(0).toUpperCase() + string.slice(1);
-
    return (capitalizedString);
 }
 
-
-// module.exports = capitalize;
-module.exports = reverseString;
-// module.exports = stringLength;
-
+module.exports = { stringLength, reverseString, Calculator, capitalize };
